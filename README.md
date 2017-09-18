@@ -45,6 +45,11 @@ bundle install --path vendor/bundle
 #### 2-3. データベース作成
 ```bash
 bundle exec rake db:create
+
+# 以下 rails / rake 系のコマンドはこのようにbundle execをプレフィックスする。
+# 面倒なので、alias をセット
+alias rails="bundle exec rails"
+alias rake="bundle exec rake"
 ```
 
 #### 2-4. エラーハンドリング系
