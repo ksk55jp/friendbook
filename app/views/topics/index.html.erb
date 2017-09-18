@@ -1,0 +1,9 @@
+<h1>トピック一覧</h1>
+<% @topics.each do |topic|%>
+  <p>タイトル:<%= topic.title %></p>
+  <p>本文:<%= topic.content %></p>
+  <p>投稿日<%= topic.created_at %></p>
+  <p>最終編集日<%= topic.updated_at %></p>
+<% end %>
+
+<%= link_to "投稿する", new_topic_path %>
