@@ -14,3 +14,8 @@
 
 # Requirement to exclude private information
 .env
+
+
+# vendor/bundle
+vendor/bundle/**
+
