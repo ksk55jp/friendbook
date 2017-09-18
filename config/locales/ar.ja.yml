@@ -1,0 +1,12 @@
+---
+ja:
+  activerecord:
+    models:
+      topic: トピック
+
+  attributes:
+    topic:
+      title: タイトル
+      content: 内容
+      created_at: 投稿日付
+      updated_at: 変更日付
