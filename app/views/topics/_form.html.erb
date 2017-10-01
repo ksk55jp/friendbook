@@ -1,5 +1,5 @@
 <p><%= notice %></p>
-<%= form_for(@topic, url: confirm_topics_path) do |f| %>
+<%= form_for(@topic, url: choose_new_or_edit) do |f| %>
   <% if @topic.errors.any? %>
     <div id="error_explanation">
       <h2><%= @topic.errors.count %>件のエラーがあります。</h2>
@@ -17,7 +17,7 @@
   <%= f.label :content %>
   <%= f.text_field :content %>
   <br>
-  <%= f.submit %>
+  <%= f.submit class: 'btn btn-success' %>
 <% end %>
 
-<%= link_to "投稿一覧に戻る", topics_path %>
+<%= link_to "投稿一覧に戻る", topics_path, class: 'btn btn-primary' %>

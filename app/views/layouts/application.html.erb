@@ -7,8 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="<%= root_path %>">FriendsBook</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="<%= topics_path %>">投稿</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">ユーザー</a>
+      <div class="dropdown-menu">
+        <div class="dropdown-divider"></div>
+        <% if user_signed_in? %>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+        <% else %>
+          <%= link_to 'ログイン', new_user_session_path, class: 'dropdown-item' %>
+          <br>
+          <%= link_to 'サインアップ', new_user_registration_path, class: 'dropdown-item' %>
+        <% end %>
+      </div>
+    </li>
+  </ul>
 
-<%= yield %>
+  <section class="main-header">
+    <!-- <img src="<%= asset_path "fb.png" %>"> -->
+    <p class="flash"><%= notice %><%= alert %></p>
+  </section>
+
+  <!--
+  here comes the content from Ruby On Rails Program
+  -->
+  <%= yield %>
 
 </body>
 </html>

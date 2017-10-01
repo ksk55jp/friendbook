@@ -21,3 +21,6 @@ vendor/bundle/**
 
 **/*.swp
 
+
+# my personal memo
+**/memo.txt

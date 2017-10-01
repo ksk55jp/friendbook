@@ -1,5 +1,7 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:edit, :destroy, :update]
+  before_action :authenticate_user!
+
   # topics_path 
   def index
     @topics=Topic.all.order(:created_at => 'desc')

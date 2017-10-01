@@ -47,3 +47,12 @@ end
 
 gem 'rails_12factor', group: :production
 gem 'faker'
+
+gem 'twitter-bootstrap-rails'
+
+gem 'devise'
+
+gem 'jquery-turbolinks'
+
+gem 'rails_12factor', group: :production
+
