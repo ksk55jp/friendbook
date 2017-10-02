@@ -31,10 +31,10 @@ header ul:after {
 }
 
 .main-header {
-  padding-bottom: 15%;
+  padding-bottom: 5%;
   width: 100%;
   background-size: cover;
-  background-image: url("images-master/header.jpg");
+  /* background-image: url("images-master/header.jpg"); */
   background-attachment: fixed;
 }
 
@@ -42,7 +42,7 @@ header ul:after {
   display: block;
   margin: 0 auto;
   width: 25%;
-  padding-top: 15%;
+  padding-top: 5%;
 }
 
 .about {
@@ -92,5 +92,5 @@ body {
 
 .flash {
   /* color:white; */
-  padding-top: 10px;
+  padding-top: 5px;
 }
