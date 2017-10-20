@@ -1,14 +1,15 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-    <p><%= notice %></p>
+    <!-- <p><%= notice %></p> -->
     <h1>トピック一覧</h1>
     <%= link_to "投稿する", new_topic_path, class: 'btn btn-success newpost' %>
     <% @topics.each do |topic|%>
       <div class="row">
         <p>タイトル:<%= topic.title %></p>
         <p>本文:<%= topic.content %></p>
-        <p>投稿日<%= topic.created_at %></p>
-        <p>最終編集日<%= topic.updated_at %></p>
+        <p>投稿日:<%= topic.created_at %></p>
+        <p>最終編集日:<%= topic.updated_at %></p>
+        <p>投稿者:<%= topic.user.name %></p>
         <%= link_to "投稿を編集する", edit_topic_path(topic.id), data:{confirm: '本当に編集しますか？'}, class: 'btn btn-warning' %>
         <%= link_to "投稿を削除する", topic_path(topic.id), method: :delete, data: {confirm: '本当に削除しますか？'}, class: 'btn btn-danger' %>
       </div>

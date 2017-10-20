@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
 
   # topics_path 
   def index
-    @topics=Topic.all.order(:created_at => 'desc')
+    @topics=Topic.all.includes(:user).order(:created_at => 'desc')
   end
 
   # new_topic_path 
@@ -38,8 +38,10 @@ class TopicsController < ApplicationController
   # topics_path (POST)
   def create
     @topic = Topic.new(topic_params)
+    @topic.user_id = current_user.id
     if @topic.save
       redirect_to topics_path, notice: "投稿を作成しました"
+      NoticeMailer.sendmail_fb(@topic).deliver
     else
       render 'new'
     end

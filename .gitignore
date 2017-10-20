@@ -24,3 +24,9 @@ vendor/bundle/**
 
 # my personal memo
 **/memo.txt
+
+
+# avatar pictures
+public/uploads/user/avatar/**/*.jpg
+public/uploads/user/avatar/**/*.png
+public/uploads/user/avatar/**/*.bmp
