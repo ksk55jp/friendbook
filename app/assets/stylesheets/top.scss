@@ -70,6 +70,7 @@ header ul:after {
 }
 
 footer {
+  /* display: none; */
   width: 100%;
   background-color:#2c3e50;
   padding: 20px 0 10px 0;
@@ -93,4 +94,8 @@ body {
 .flash {
   /* color:white; */
   padding-top: 5px;
+}
+
+.mainarea {
+  margin-bottom: 100px;
 }
