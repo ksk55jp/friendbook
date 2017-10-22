@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  #
-  resources :topics, only: [:index, :new, :create, :edit, :update, :destroy, :show] do
-    collection do
-      post :confirm
-    end
+
+  resources :topics do
+    resources :comments
+    post :confirm, on: :collection
   end
 
   ## Routing for top screen

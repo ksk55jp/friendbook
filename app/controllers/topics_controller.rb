@@ -1,10 +1,19 @@
 class TopicsController < ApplicationController
-  before_action :set_topic, only: [:edit, :destroy, :update]
+  before_action :set_topic, only: [:show, :edit, :destroy, :update]
   before_action :authenticate_user!
 
   # topics_path 
   def index
     @topics=Topic.all.includes(:user).order(:created_at => 'desc')
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def show
+    @comment = @topic.comments.build
+    @comments = @topic.comments.includes(:user)
   end
 
   # new_topic_path 
