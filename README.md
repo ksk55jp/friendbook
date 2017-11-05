@@ -106,6 +106,8 @@ config/application.rb
 - 20170918 : バリデーションをつけた。ビューをパーシャルでリファクタする
 - 20170918 : コンファームビューをつけた。
 - 20171001 : Login with email
+- 20171101 : Picture model を作ってtopicとAssociateした
+
 
 
 

@@ -24,11 +24,11 @@
             <%= current_user.name %>がログインしています。
           </p>
           <%= link_to 'マイページ', edit_user_registration_path %><br>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
-          <% if current_user.admin? %><br>
-            <%= link_to '管理者ページ', rails_admin_path %>
+          <% if current_user.admin? %>
+            <%= link_to '管理者ページ', rails_admin_path %><br>
           <% end %>
-
+          <%= link_to 'User一覧', users_path if user_signed_in? %><br>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'dropdown-item' %><br>
         <% else %>
           <%= link_to 'ログイン', new_user_session_path, class: 'dropdown-item' %>
           <br>

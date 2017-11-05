@@ -9,4 +9,7 @@ module ApplicationHelper
     end
     image_tag(img_url, alt: user.name)
   end
+
+  def picture_img(picture)
+  end
 end

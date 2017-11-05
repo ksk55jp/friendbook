@@ -26,6 +26,10 @@ vendor/bundle/**
 **/memo.txt
 
 
+**/*.jpg
+**/*.png
+**/*.bmp
+
 # avatar pictures
 public/uploads/user/avatar/**/*.jpg
 public/uploads/user/avatar/**/*.png

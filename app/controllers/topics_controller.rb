@@ -57,13 +57,29 @@ class TopicsController < ApplicationController
   end
 
   def confirm
+    #binding.pry
     @topic = Topic.new(topic_params)
     render :new if @topic.invalid?
+  end
+
+  def pictures
+    @topic = Topic.find(params[id])
+    @pictures = @topic.pictures
   end
 private
   def topic_params
     Rails.logger.info "[DEBUG] topic_params in"
-    params.require(:topic).permit(:title, :content)
+    params.require(:topic).permit(:title, 
+                                  :content,
+         pictures_attributes: [
+          :_destroy,
+          :id,
+          :image,
+          :image_cache,
+          :title,
+          :alt,
+          :topic_id,
+        ],)
   end
 
   def set_topic

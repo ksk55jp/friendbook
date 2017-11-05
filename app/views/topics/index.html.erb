@@ -6,12 +6,32 @@
     <% @topics.each do |topic|%>
       <div class="row">
         <%= link_to topic_path(topic) do %>
-          <h4> <strong><%= topic.title %></strong> </h4>
+          <h4> 
+            <strong><%= topic.title%>
+              <% if topic.comments.count > 0 %>
+                <%= "(コメント数：" + topic.comments.count.to_s + ")"%>
+              <% end %>
+            </strong> 
+          </h4>
         <% end %>
         <!-- <p>タイトル:<%= topic.title %></p> -->
-        <p>本文:<%= topic.content %></p>
-        <p>投稿日:<%= topic.created_at %></p>
-        <p>最終編集日:<%= topic.updated_at %></p>
+        <pre><%= topic.content %></pre>
+        <% if topic.pictures.count > 0 %>
+          <h3>(画像：<%=topic.pictures.count%>)</h3>
+          <% topic.pictures.each do |picture| %>
+            <%= image_tag("#{picture.image}", alt: picture.alt) %>
+            <br>
+          <% end %>
+        <% else %>
+          <p>画像は登録されていません</p>
+        <% end %>
+        <div class="dates">
+          <p>投稿日:<%= topic.created_at %></p>
+          <% if topic.created_at != topic.updated_at %>
+            <!--<p>最終編集日:<%= topic.updated_at %></p>-->
+            <p>編集済み</p>
+          <% end %>
+        </div>
         <p>投稿者:<%= topic.user.name %></p>
         <div class="profile_image">
           <%= profile_img(topic.user) if profile_img(topic.user) %>

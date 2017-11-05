@@ -11,6 +11,15 @@
         <%= @topic.created_at.strftime("%y/%m/%d %p %I:%M") %>
       </p>
     </div>
+    <% if @topic.pictures.count > 0 %>
+      <div class="pictures_area">
+        <% @topic.pictures.each do |picture| %>
+          <div class="each_picture">
+            <%= image_tag(picture.image, alt: picture.alt )%><br>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
     <p>コメント一覧</p>
     <div id="comments_area">
       <%= render partial: 'comments/index', locals: {comments: @comments, topic: @topic } %>
