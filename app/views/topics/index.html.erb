@@ -36,7 +36,7 @@
         <div class="profile_image">
           <%= profile_img(topic.user) if profile_img(topic.user) %>
         </div>
-        <%= link_to "投稿を編集する", edit_topic_path(topic.id), data:{confirm: '本当に編集しますか？'}, class: 'btn btn-warning' %>
+        <%= link_to "投稿を編集する", edit_topic_path(topic.id), class: 'btn btn-warning' %>
         <%= link_to "投稿を削除する", topic_path(topic.id), method: :delete, data: {confirm: '本当に削除しますか？'}, class: 'btn btn-danger' %>
       </div>
     <% end %>
