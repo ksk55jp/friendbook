@@ -1,8 +1,9 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
     <!-- <p><%= notice %></p> -->
-    <h1>トピック一覧</h1>
+    <h3>トピック一覧</h3>
     <%= link_to "投稿する", new_topic_path, class: 'btn btn-success newpost' %>
+    <br>
     <% @topics.each do |topic|%>
       <div class="row">
         <%= link_to topic_path(topic) do %>

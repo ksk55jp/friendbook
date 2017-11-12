@@ -3,8 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .newpost {
   margin-top: 20px;
-  margin-bottom: 20px;
-  
+  margin-bottom: 60px;
+  float: right;
+}
+
+.newpost:after {
+  content: '';
+  display:block;
+  clear: both;
 }
 
 .wrapper {
@@ -16,7 +22,7 @@
   }
 
 
-  h1 {
+  h3 {
     text-align: left;
   }
   .row {

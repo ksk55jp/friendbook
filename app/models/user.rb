@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
 
   mount_uploader  :avatar, AvatarUploader
 
+
   def self.find_for_facebook_oauth(auth, singed_in_resource=nil)
     user = User.find_by( provider: auth.provider, uid: auth.uid)
 
@@ -77,7 +78,43 @@ class User < ActiveRecord::Base
     relationships.find_by(followed_id: other_user.id).destroy 
   end
 
+  def followed?(other_user)
+    other_user.following?(self)
+  end
+
   def mutual_following?(other_user)
+    #binding.pry
     self.following?(other_user) && other_user.following?(self)
   end
+
+  def get_relationship_str(other_user, switch)
+    if mutual_following?(other_user)
+      if switch =="status"
+        "相互フォロー中"
+      else
+        "相互フォローをやめる"
+      end
+    else
+      if self.following?(other_user)
+        if switch == "status"
+          "フォローリクエスト申請中"
+        else
+          "出しているリクエストをやめる"
+        end
+      elsif other_user.following?(self)
+        if switch == "status"
+          "相手からリクエストを受けています"
+        else
+          "相手のリクエストを受ける"
+        end
+      else
+        if switch == "status"
+          "リクエストを受けても出してもいません"
+        else
+          "フォローをリクエストする"
+        end
+      end
+    end
+  end
+
 end

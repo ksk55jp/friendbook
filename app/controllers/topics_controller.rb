@@ -4,7 +4,9 @@ class TopicsController < ApplicationController
 
   # topics_path 
   def index
-    @topics=Topic.all.includes(:user).order(:created_at => 'desc')
+    @topics = Topic.all.includes(:user).order(:created_at => 'desc')
+    tmp = @topics.select{ |t| t.user.mutual_following?(current_user) || t.user.id==current_user.id}
+    @topics = tmp
     respond_to do |format|
       format.html
       format.js
