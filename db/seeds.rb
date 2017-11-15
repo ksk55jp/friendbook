@@ -15,7 +15,7 @@
     name=Faker::Name.name
   end
   password="password"
-  User.create!(email: email,
+  User.create!(email: "#{t}.email",
      password: password,
      password_confirmation: password,
      name: name,
