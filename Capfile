@@ -6,5 +6,4 @@ require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano3/unicorn'
 
-# taskを記述したファイルを読み込むよう設定。　場所と拡張子を指定。
 Dir.glob('lib/capistrano/tasks/*.rb').each { |r| import r }
