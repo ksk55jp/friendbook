@@ -18,7 +18,8 @@
   User.create!(email: email,
      password: password,
      password_confirmation: password,
-     name: name
+     name: name,
+      provider: "provider_#{t}"
   )
  ## Topics
   Topic.create!(
