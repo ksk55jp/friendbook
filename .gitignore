@@ -34,3 +34,10 @@ vendor/bundle/**
 public/uploads/user/avatar/**/*.jpg
 public/uploads/user/avatar/**/*.png
 public/uploads/user/avatar/**/*.bmp
+
+
+# AWS Private key file
+**/*.pem
+
+# Secret 
+/secrets
