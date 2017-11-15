@@ -7,24 +7,25 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 100.times do |t|
   ## Users
-  if t==0
-    email="ksk55jp@gmail.com"
-    name="啓介さん"
-  else
+#  if t==0
+#    email="ksk55jp@gmail.com"
+#    name="啓介さん"
+#  else
     email=Faker::Internet.email
     name=Faker::Name.name
-  end
+#  end
   password="password"
-  User.create!(email: "#{t}.email",
+  User.create!(
+     email: "#{t}.email",
      password: password,
      password_confirmation: password,
      name: name,
-      provider: "provider_#{t}"
+     provider: "provider_#{t}"
   )
  ## Topics
-  Topic.create!(
-    user_id: t+1,
-    title: Faker::DragonBall.character,
-    content: Faker::Matz.quote
-  )
+#  Topic.create!(
+#    user_id: t+1,
+#    title: Faker::DragonBall.character,
+#    content: Faker::Matz.quote
+#  )
 end
