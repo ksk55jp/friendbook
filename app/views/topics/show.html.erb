@@ -5,7 +5,7 @@
       <p class="left"><strong>タイトル</strong></p>
       <p class="left"><%= @topic.title %></p>
       <p class="left"><strong>内容</strong></p>
-      <p class="left"><%= @topic.content %></p>
+      <pre class="left"><%= @topic.content %></pre>
       <p class="right">
         <strong>作成時間</strong>
         <%= @topic.created_at.strftime("%y/%m/%d %p %I:%M") %>

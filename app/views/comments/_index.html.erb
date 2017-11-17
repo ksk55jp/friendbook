@@ -3,7 +3,7 @@
     <% unless comment.id.nil? %>
       <li>
         <p class="left"><%= comment.user.name %> さんがコメントしました </p>
-        <p class="left"><%= comment.content%> </p>
+        <%= comment.content%> 
         <% if current_user.id == comment.user.id %>
           <p class="right">
             <%= link_to  '', edit_topic_comment_path(topic, comment), class: "fa fa-pencil-square-o fa-lg" %>

@@ -20,8 +20,6 @@
     <br>
     <%= f.fields_for :pictures, Picture.new do |picture_f| %>
       <%= picture_f.file_field :image %>
-      <%= picture_f.text_field :title ,placeholder: 'title' %>
-      <%= picture_f.text_field :alt , placeholder: 'alt' %>
     <% end %>
     <br>
   </div>
