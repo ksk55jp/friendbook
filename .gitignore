@@ -28,6 +28,8 @@ vendor/bundle/**
 
 **/*.jpg
 **/*.png
+!public/404.png
+!public/500.png
 **/*.bmp
 
 # avatar pictures
